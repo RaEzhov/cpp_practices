@@ -2,21 +2,21 @@
 #define QUEUE_H
 #include <vector>
 template <class T>
-class queue{
+class Queue{
 public:
-    queue(){
+    Queue(){
         arr.resize(0);
     }
-    queue(int size){
+    Queue(int size){
         arr.resize(size);
     }
-    queue(const queue& arg){
+    Queue(const Queue& arg){
         arr.resize(arg.arr.size());
         for (int i = 0; i < arr.size(); i++){
             arr[i] = arg.arr[i];
         }
     }
-    bool isEmpty(){
+    bool isEmpty() const{
         return arr.empty();
     }
     void push(T element){
@@ -31,21 +31,20 @@ public:
         arr.erase(arr.begin());
         return res;
     }
-    T front(){
+    T front() const{
         if (arr.empty()){
             std::cout << "Error! Queue is empty!\n";
             exit(-1);
         }
         return arr[0];
     }
-    T back() {
+    T back()const{
         if (arr.empty()){
             std::cout << "Error! Queue is empty!\n";
             exit(-1);
         }
         return arr[arr.size() - 1];
     }
-
 private:
     std::vector<T> arr;
 };

@@ -7,6 +7,10 @@ template <class T>
 class Mat2D{
 public:
     Mat2D(int n, int m) {
+        if (n < 0 || m < 0){
+            std::cout << "Argument error! Matrix size impossible!\n";
+            exit(-1);
+        }
         rows = n;
         cols = m;
         matrix.resize(rows);
@@ -33,7 +37,7 @@ public:
             exit(-1);
         }
     }
-    void print() {
+    void print() const{
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; ++j) {
                 std::cout << matrix[i][j] << " ";
@@ -113,7 +117,7 @@ public:
         return tmp;
     }
 
-    T determinant() {
+    T determinant() const {
         if (rows != cols){
             std::cout << "Error! Matrix is not square!\n";
             exit(-1);

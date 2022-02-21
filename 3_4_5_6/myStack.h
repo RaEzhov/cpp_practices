@@ -36,7 +36,7 @@ public:
     }
     MyStack<T>(){
         p_st = new DynArray<T>(10);
-        capacity = p_st->capacity;
+        capacity = p_st->size();
         top_s = 0;
     }
     ~MyStack<T>(){

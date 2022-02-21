@@ -29,10 +29,13 @@ public:
             exit(-1);
         }
     }
+    size_t size() const{
+        return length;
+    }
     void append(T n){
         vec.push_back(n);
     }
-    T get(int n){
+    T get(int n) const{
         if (n < length){
             return vec[n];
         } else {
@@ -77,7 +80,7 @@ public:
             shift(vec, false);
         }
     }
-    void print(){
+    void print() const{
         std::cout << "[ ";
         for (int i = 0; i < length - 1; i++){
             std::cout << vec[i] << ", ";

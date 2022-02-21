@@ -23,5 +23,19 @@ VecND<T> operator*(Mat2D<T>& mat, VecND<T>& vec){
 
 
 int main() {
+    MyStack<int> stack;
+    stack.push(12);
+    stack.push(13);
+    stack.push(654);
+    while (!stack.isEmpty()){
+        std::cout << stack.pop() << ' ';
+    }
+    Queue<double> queue;
+    queue.push(12.4);
+    queue.push(42.21);
+    queue.push(1);
+    while(!queue.isEmpty()){
+        std::cout << queue.pop() << ' ';
+    }
     return 0;
 }
